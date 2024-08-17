@@ -874,6 +874,35 @@ namespace XIVComboPlugin
                 }
             }
 
+            if (Configuration.ComboPresets.HasFlag(CustomComboPreset.ViperLegacyComboAlt))
+            {
+                switch (actionID)
+                {
+                    case VPR.DreadFangs:
+                    case VPR.DreadMaw:
+                        if (JobGauges.Get<VPRGauge>().SerpentCombo == SerpentCombo.FIRSTLEGACY)
+                            return VPR.FirstLegacy;
+                        break;
+
+                    case VPR.HuntersCoil:
+                    case VPR.HuntersDen:
+                        if (JobGauges.Get<VPRGauge>().SerpentCombo == SerpentCombo.SECONDLEGACY)
+                            return VPR.SecondLegacy;
+                        break;
+
+                    case VPR.SwiftskinsCoil:
+                    case VPR.SwiftskinsDen:
+                        if (JobGauges.Get<VPRGauge>().SerpentCombo == SerpentCombo.THIRDLEGACY)
+                            return VPR.ThirdLegacy;
+                        break;
+
+                    case VPR.Reawaken:
+                        if (JobGauges.Get<VPRGauge>().SerpentCombo == SerpentCombo.FOURTHLEGACY)
+                            return VPR.FourthLegacy;
+                        break;
+                }
+            }
+            
             return iconHook.Original(self, actionID);
         }
 

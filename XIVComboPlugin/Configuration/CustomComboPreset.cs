@@ -208,6 +208,9 @@ namespace XIVComboPlugin
         
         [CustomComboInfo("Generational Legacy", "Legacy moves replace Generation moves when usable", 41)]
         ViperLegacyCombo = 1L << 51,
+        
+        [CustomComboInfo("Generational Legacy Alt", "Legacy moves replace next Generation moves when usable", 41)]
+        ViperLegacyComboAlt = 1L << 62,
     }
 
     public class CustomComboInfoAttribute : Attribute
